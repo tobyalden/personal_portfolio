@@ -14,3 +14,13 @@ describe 'adding a project' do
 		expect(page).to have_content 'Love'
 	end
 end
+
+describe 'viewing a project' do
+	it 'displays a link on a category page to each project in that category' do
+		test_category = Category.create(:name => "JavaScript", :description => "What a useful language.")
+		test_project = test_category.projects.create(:name => "Love", :description => "A difficult platformer.", :link => "brlka.itch.io/love")
+		visit category_path(test_category)
+		click_on 'Love'
+		expect(page).to have_content 'A difficult platformer.'
+	end
+end
