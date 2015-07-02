@@ -39,3 +39,13 @@ describe 'editing a project' do
 		expect(page).to have_no_content 'Love'
 	end
 end
+
+describe 'deleting a project' do
+	it 'display a link on a project page to delete that project' do
+		test_category = Category.create(:name => "JavaScript", :description => "What a useful language.")
+		test_project = test_category.projects.create(:name => "Love", :description => "A difficult platformer.", :link => "brlka.itch.io/love")
+		visit category_project_path(test_category, test_project)
+		click_on 'Delete Project'
+		expect(page).to have_no_content 'Love'
+	end
+end
