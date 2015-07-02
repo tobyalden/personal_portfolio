@@ -12,3 +12,12 @@ describe 'adding a category' do
 		expect(page).to have_content 'Ruby'
 	end
 end
+
+describe 'viewing a category' do
+	it "displays a link to each category's page on the index" do
+		test_category = Category.create(:name => "Ruby", :description => "I made a program.")
+		visit root_path
+		click_on 'Ruby'
+		expect(page).to have_content 'I made a program.'
+	end
+end
