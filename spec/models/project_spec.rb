@@ -1,8 +1,7 @@
 require 'rails_helper'
 
-describe Category do
+describe Project do
 	it { should validate_presence_of :name }
 	it { should validate_presence_of :description }
-	
-	it { should have_many :projects }
+	it { should validate_presence_of :link }
 end
