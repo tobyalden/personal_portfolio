@@ -13,6 +13,19 @@ describe 'adding a category' do
 	end
 end
 
+describe 'editing a category' do
+	it 'displays a link on each category page to edit that category' do
+		test_category = Category.create(:name => "Ruby", :description => "I made a program.")
+		visit category_path(test_category)
+		click_on 'Edit Category'
+		fill_in 'Name', :with => 'Ember.js'
+		fill_in 'Description', :with => 'I made a program, but it broke.'
+		click_on 'Update Category'
+		expect(page).to have_content 'Ember.js'
+		expect(page).to have_no_content 'Ruby'
+	end
+end
+
 describe 'viewing a category' do
 	it "displays a link to each category's page on the index" do
 		test_category = Category.create(:name => "Ruby", :description => "I made a program.")
