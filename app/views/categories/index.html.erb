@@ -1,0 +1,9 @@
+<h1>Personal Portfolio</h1>
+
+<ul>
+	<% @categories.each do |category| %>
+		<li> <%= category.name %> </li>
+	<% end %>
+</ul>
+
+<p><%= link_to 'New Category', new_category_path %></p>
