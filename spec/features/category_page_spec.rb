@@ -21,3 +21,12 @@ describe 'viewing a category' do
 		expect(page).to have_content 'I made a program.'
 	end
 end
+
+describe 'deleting a category' do
+	it "displays a link on each category's page to delete that category" do
+		test_category = Category.create(:name => "Ruby", :description => "I made a program.")
+		visit category_path(test_category)
+		click_on 'Delete Category'
+		expect(page).to have_no_content 'Ruby'
+	end
+end

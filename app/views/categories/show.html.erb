@@ -2,4 +2,5 @@
 
 <p> <%= @category.description %> </p>
 
+<p> <%= link_to 'Delete Category', category_path(@category), :method => 'delete' %> </p>
 <p> <%= link_to 'Back to categories', categories_path %> </p>
