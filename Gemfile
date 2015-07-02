@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails'
+gem 'pry'
 gem 'pg'
 gem 'sass-rails'
 gem 'uglifier'

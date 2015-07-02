@@ -2,5 +2,13 @@
 
 <p> <%= @category.description %> </p>
 
+<ul>
+	<% @category.projects.each do |project| %>
+		<li> <%= project.name %> </li>
+	<% end %>
+</ul>
+
+<p> <%= link_to 'New Project',  new_category_project_path(@category) %> </p>
+
 <p> <%= link_to 'Delete Category', category_path(@category), :method => 'delete' %> </p>
 <p> <%= link_to 'Back to categories', categories_path %> </p>
