@@ -24,3 +24,18 @@ describe 'viewing a project' do
 		expect(page).to have_content 'A difficult platformer.'
 	end
 end
+
+describe 'editing a project' do
+	it 'displays a link on a project page to a form to edit that project' do
+		test_category = Category.create(:name => "JavaScript", :description => "What a useful language.")
+		test_project = test_category.projects.create(:name => "Love", :description => "A difficult platformer.", :link => "brlka.itch.io/love")
+		visit category_project_path(test_category, test_project)
+		click_on 'Edit Project'
+		fill_in 'Name', :with => 'YouHole'
+		fill_in 'Description', :with => 'A horrible website I made'
+		fill_in 'Link', :with => 'youhole.tv'
+		click_on 'Update Project'
+		expect(page).to have_content 'YouHole'
+		expect(page).to have_no_content 'Love'
+	end
+end

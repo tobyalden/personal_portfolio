@@ -4,4 +4,6 @@
 
 <a href="http://www.<%=@project.link%>">Project Homepage</a>
 
+<p> <%= link_to 'Edit Project', edit_category_project_path(@category, @project) %> </p>
+
 <p> <%= link_to 'Back to ' + @category.name, category_path(@category) %> </p>
