@@ -1,1 +1,1 @@
-P.S.: I wasn't able to push to Heroku. Apparently the sqlite3 gem (which is necessary to run ```rails s``` ) isn't supported.
+P.S.: I wasn't able to push to Heroku. Apparently the sqlite3 gem (which is necessary to run the rails server) isn't supported.
