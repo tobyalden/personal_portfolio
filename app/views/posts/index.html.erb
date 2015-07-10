@@ -1,0 +1,14 @@
+<h1>Blog posts</h1>
+
+<ol>
+  <% @posts.each do |post| %>
+    <li>
+      <strong> <%= post.title %> </strong> <br>
+      <%= post.body %>
+    </li>
+  <% end %>
+</ol>
+
+<% if is_admin? %>
+	<p> <%= link_to 'New Post', new_post_path %> </p>
+<% end %>
