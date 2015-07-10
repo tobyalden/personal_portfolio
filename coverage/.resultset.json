@@ -553,6 +553,8 @@
         null,
         null,
         null,
+        1,
+        null,
         null
       ],
       "/Users/Alden/Desktop/personal_portfolio/app/models/user.rb": [
@@ -798,6 +800,6 @@
         null
       ]
     },
-    "timestamp": 1436558165
+    "timestamp": 1436558864
   }
 }
