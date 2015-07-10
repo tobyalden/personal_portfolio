@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
 
+	before_filter :authenticate_user!, except: [:index, :show]
+
 	def index
 		@categories = Category.all
 	end
@@ -7,7 +9,7 @@ class CategoriesController < ApplicationController
 	def new
 		@category = Category.new
 	end
-	
+
 	def create
 		@category = Category.new(category_params)
 		if @category.save

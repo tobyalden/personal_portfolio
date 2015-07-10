@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root :to => 'categories#index'
 
   resources 'categories' do
-  	resources 'projects'
+  	resources 'projects' do
+      resources 'comments'
+    end
   end
 
 end

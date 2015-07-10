@@ -9,4 +9,13 @@
   <p> <%= link_to 'Delete Project', category_project_path(@category, @project), :method => 'delete' %> </p>
 <% end %>
 
+<h4>Comments:</h4>
+<ul>
+  <% @project.comments.each do |comment| %>
+    <li> <strong> <%= comment.user.email %>: </strong> <%= comment.body %> </li>
+  <% end %>
+</ul>
+
+<p> <%= link_to 'New Comment', new_category_project_comment_path(@category, @project) %> </p>
+
 <p> <%= link_to 'Back to ' + @category.name, category_path(@category) %> </p>
