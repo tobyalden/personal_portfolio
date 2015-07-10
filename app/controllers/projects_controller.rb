@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
 
+	before_filter :authenticate_user!, except: [:show]
+
 	def new
 		@category = Category.find(params[:category_id])
 		@project = @category.projects.new

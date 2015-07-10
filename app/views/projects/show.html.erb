@@ -4,7 +4,9 @@
 
 <a href="http://www.<%=@project.link%>">Project Homepage</a>
 
-<p> <%= link_to 'Edit Project', edit_category_project_path(@category, @project) %> </p>
-<p> <%= link_to 'Delete Project', category_project_path(@category, @project), :method => 'delete' %> </p>
+<% if is_admin? %>
+  <p> <%= link_to 'Edit Project', edit_category_project_path(@category, @project) %> </p>
+  <p> <%= link_to 'Delete Project', category_project_path(@category, @project), :method => 'delete' %> </p>
+<% end %>
 
 <p> <%= link_to 'Back to ' + @category.name, category_path(@category) %> </p>

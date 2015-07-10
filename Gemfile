@@ -10,6 +10,8 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'sqlite3'
+gem 'simplecov', require: false
+gem 'devise'
 
 group :development do
   gem 'byebug'
