@@ -4,7 +4,7 @@
   <% end %>
 </ul>
 
-<%= form_for Reference.new do |f| %>
+<%= form_for Reference.new, remote: true do |f| %>
   <%= f.label :body %>
   <%= f.text_field :body %>
   <%= f.submit %>
