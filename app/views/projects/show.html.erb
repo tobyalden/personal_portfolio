@@ -16,6 +16,10 @@
   <% end %>
 </ul>
 
-<p> <%= link_to 'New Comment', new_category_project_comment_path(@category, @project) %> </p>
+<p> <%= link_to 'New Comment', new_category_project_comment_path(@category, @project), remote: true %> </p>
+
+<div id="new-comment-box">
+
+</div>
 
 <p> <%= link_to 'Back to ' + @category.name, category_path(@category) %> </p>

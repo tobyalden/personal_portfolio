@@ -5,6 +5,10 @@ class CommentsController < ApplicationController
     @category = Category.find(params[:project_id])
     @project = Project.find(params[:project_id])
     @comment = Comment.new
+    respond_to do |format|
+      format.html { redirect_to category_project_path(@category, @project) }
+      format.js
+    end
   end
 
   def create
